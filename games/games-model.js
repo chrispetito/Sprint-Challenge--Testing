@@ -12,7 +12,7 @@ function getAll() {
 function insert(game) {
   return db("games")
     .insert(game, "id")
-    .then(games => {
+    .then(ids => {
       return db("games")
         .where({ id: ids[0] })
         .first();
